@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "plantilla.html" %}
+{% load misfiltros %}
+{% block cabecera %}
+    <title>Pagina 5</title>
+{% endblock %}
+{% block bloque1 %}
+    <h1>Creación plantilla 5</h1>
+    <h3>{{ texto|upper }}</h3>
+    <h3>{{ texto|recortar:'i' }}</h3>
+    <h3>{{ cantidad|add:'100' }}</h3>
+    <h3>{{ fecha|default:"No se ingreso una fecha" }}</h3>
+    {% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "styles/style1.css" %}">
+    <title>Portada tabla Webs y Temas</title>
+</head>
+<body>
+    <h1>Lista de la tabla</h1>
+    <h3>Webs base de datos</h3>
+    {% if lista_webs %}
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Ruta</th>
+        </thead>
+        {% for web in lista_webs %}
+        <tr>
+            <td>{{ web.nombre }}</td>
+            <td>{{ web.ruta }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No hay registros de webs en la BD</p>
+    {% endif %}
+
+    <h3>Temas base de datos</h3>
+    {% if lista_temas %}
+    <table>
+        <thead>
+            <th>Tema</th>
+        </thead>
+        {% for tema in lista_temas %}
+        <tr>
+            <td>{{ tema.nombre }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No hay registros de webs en la BD</p>
+    {% endif %}
+</body>
+</html>
